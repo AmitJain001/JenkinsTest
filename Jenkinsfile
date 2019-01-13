@@ -21,7 +21,7 @@ pipeline {
         stage ('Monitor') {
             steps {
                 echo 'Monitoring declarative...'
-                ls -lah
+                sh 'ls -lah'
             }
         }
     }
