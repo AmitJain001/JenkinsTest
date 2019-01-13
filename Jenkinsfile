@@ -23,13 +23,12 @@ pipeline {
 // Script //
 node {
     stage('Build') {
-        echo 'Building....'
+        echo 'Building Script....'
     }
     stage('Test') {
-        echo 'Building....'
+        echo 'Building Script....'
     }
     stage('Deploy') {
-        echo 'Deploying....'
+        echo 'Deploying Script....'
     }
 }
-Not all Pipelines will have
