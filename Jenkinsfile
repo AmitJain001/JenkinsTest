@@ -19,7 +19,7 @@ pipeline {
             }
             stage ('Monitor') {
                 steps{
-                    echo 'Monitoring ...'
+                    echo 'Monitoring declarative...'
                 }
             }
             
