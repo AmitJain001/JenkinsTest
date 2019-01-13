@@ -1,40 +1,35 @@
-#!/usr/bin/env groovy
-// Declarative //
 pipeline {
-    agent any
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building declarative.. '
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing declarative..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying declarative....'
-            }
-        }
-        stage ('Monitor') {
-            steps {
-                echo 'Monitoring declarative...'
-                sh 'ls -lah'
-            }
-        }
-    }
-}
-// Script //
-node {
+  agent any
+  stages {
     stage('Build') {
-        echo 'Building Script....'
+      parallel {
+        stage('Build') {
+          steps {
+            echo 'Building declarative.. '
+          }
+        }
+        stage('newBuild') {
+          steps {
+            echo 'New Build'
+          }
+        }
+      }
     }
     stage('Test') {
-        echo 'Building Script....'
+      steps {
+        echo 'Testing declarative..'
+      }
     }
     stage('Deploy') {
-        echo 'Deploying Script....'
+      steps {
+        echo 'Deploying declarative....'
+      }
     }
+    stage('Monitor') {
+      steps {
+        echo 'Monitoring declarative...'
+        sh 'ls -lah'
+      }
+    }
+  }
 }
