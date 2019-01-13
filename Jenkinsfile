@@ -17,12 +17,11 @@ pipeline {
             steps {
                 echo 'Deploying declarative....'
             }
-            stage ('Monitor') {
-                steps{
-                    echo 'Monitoring declarative...'
-                }
+        }
+        stage ('Monitor') {
+            steps{
+                echo 'Monitoring declarative...'
             }
-            
         }
     }
 }
